@@ -2,11 +2,12 @@
 <template>
   <main>
     <h2>Vue.js 기초</h2>
-    <Directive1/>
-    <Directive2/>
-    <Options/>
-    <Event/>
+    <!-- <Directive1/> -->
+    <!-- <Directive2/> -->
+    <!-- <Options/> -->
+    <!-- <Event/> -->
     <StyleTest/>
+    <StyleTest2/>
   </main>
 </template>
 
@@ -17,6 +18,7 @@
   import Options from './components/Options.vue';
   import Event from './components/Event.vue';
   import StyleTest from './components/StyleTest.vue';
+  import StyleTest2 from './components/StyleTest2.vue';
 
   export default {
     name: 'App',
@@ -25,7 +27,8 @@
       Directive2,
       Options,
       Event,
-      StyleTest
+      StyleTest,
+      StyleTest2
     }
 
   }

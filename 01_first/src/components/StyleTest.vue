@@ -21,6 +21,8 @@
          </p>
          <label>점수 : </label>
          <input type="number" :class="info" v-model.number="score">
+         <br>
+         <span v-if="info.warning">1부터 100까지만 입력하세요 !</span>
 
     </div>
 </template>
@@ -60,6 +62,7 @@
         background-color: burlywood;
     }
     .warning{
+        background-color: aquamarine;
         color: red;
     }
 
