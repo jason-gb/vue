@@ -1,19 +1,33 @@
 <!-- 보이는 부분 -->
 <template>
   <main>
-    <h2>App 컴포넌트 생성</h2>
-    <p>{{ message }}</p>
+    <h2>Vue.js 기초</h2>
+    <Directive1/>
+    <Directive2/>
+    <Options/>
+    <Event/>
+    <StyleTest/>
   </main>
 </template>
 
 <!-- 컴포넌트에서 쓰는 기능 -->
 <script>
+  import Directive1 from './components/Directive1.vue';
+  import Directive2 from './components/Directive2.vue';
+  import Options from './components/Options.vue';
+  import Event from './components/Event.vue';
+  import StyleTest from './components/StyleTest.vue';
+
   export default {
-    data: function() {
-      return {
-        message : '안녕하세요오'
-      }
+    name: 'App',
+    components: {
+      Directive1, // Directive1: Directive1
+      Directive2,
+      Options,
+      Event,
+      StyleTest
     }
+
   }
 </script>
 
