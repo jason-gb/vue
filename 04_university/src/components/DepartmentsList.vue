@@ -1,4 +1,4 @@
-vbase <template>
+<template>
     <div>
         <table class="table table-striped table-hover text-center">
             <thead>
@@ -18,7 +18,9 @@ vbase <template>
                     <td>{{ department.category }}</td>
                     <td>{{ department.openYn }}</td>
                     <td>{{ department.capacity }}</td>
-                    <td><button type="button" class="btn btn-outline-danger">삭제</button></td>
+                    <td>
+                        <button type="button" class="btn btn-outline-danger">삭제</button>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -34,6 +36,6 @@ vbase <template>
     });
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 
 </style>

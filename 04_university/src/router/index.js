@@ -1,15 +1,16 @@
-import { createRouter, createWebHistory } from 'vue-router'
-
+// import { createRouter, createWebHistory } from 'vue-router'
 // import Home from '@/pages/Home.vue'
 // import Departments from '@/pages/Departments.vue'
 // import DepartmentDetail from '@/pages/DepartmentDetail.vue'
 // import NotFound from '@/pages/NotFound.vue'
 
-// 지연 로딩 적용
+import { createRouter, createWebHistory } from 'vue-router'
+// 지연로딩 적용
 const Home = () => import('@/pages/Home.vue');
 const Departments = () => import('@/pages/Departments.vue');
 const DepartmentDetail = () => import('@/pages/DepartmentDetail.vue');
 const NotFound = () => import('@/pages/NotFound.vue');
+const AddDepartment = () => import('@/pages/AddDepartment.vue');
 
 const router = createRouter({
   // HTML 5 모드
@@ -31,8 +32,11 @@ const router = createRouter({
     // 동적 라우트
     {path: '/departments/:no', name:'departments/no', component: DepartmentDetail},
     // 404 라우트
-    {path: '/:paths(.*)*', component: NotFound}
+    {path: '/:paths(.*)*', name: 'notfound', component: NotFound},
+    
+    {path: '/departments/add', name: 'departments/add', component: AddDepartment},
+    
   ]
-})
+});
 
 export default router
