@@ -1,19 +1,41 @@
 <template>
     <main>
         <h2>학과 등록</h2>
-        <DepartmentForm submitButtonText="학과 등록" :initFormData/>
+
+        <DepartmentForm submitButtonText="학과 등록" :initFormData="initFormData"
+            @form-submit="formSubmit"/>
     </main>
 </template>
 
 <script setup>
+    import apiClient from '@/api';
     import DepartmentForm from '@/components/DepartmentForm.vue';
     import { ref } from 'vue';
-</script>
-    const formData = ref ({
-        name:'',
+    import { useRouter } from 'vue-router';
+
+    const router = useRouter();
+    const initFormData = ref({
+        name: '',
         category: '',
-        openYn: 'Y',
+        openYn: 'N',
         capacity: 30
     });
+
+    const formSubmit = async (formData) => {
+        try {
+            const response = await apiClient.post(`/departments`, formData);
+
+            if (response.data.code === 201) {
+                alert('정상적으로 등록되었습니다.');
+
+                router.push({name: 'departments'});
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    };
+</script>
+
 <style scoped>
+
 </style>

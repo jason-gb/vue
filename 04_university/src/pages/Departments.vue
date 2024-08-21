@@ -2,14 +2,14 @@
     <div>
         <h2>학과 목록 조회</h2>
 
-        <DepartmentsList :departments="departments"/>
+        <DepartmentList :departments="departments"/>
         <PageNation :currentPage="currentPage" :startPage="startPage" :endPage="endPage"
             @change-page="changePage"/>
     </div>
 </template>
 
 <script setup>
-    import DepartmentsList from '@/components/DepartmentsList.vue';
+    import DepartmentList from '@/components/DepartmentList.vue';
     import PageNation from '@/components/PageNation.vue';
     import apiClient from '@/api';
     import { onMounted, ref, watch } from 'vue';
